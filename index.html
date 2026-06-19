@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
   <!-- Google Fonts: Outfit for sleek modern headers/buttons, Roboto Mono for tabular numbers to prevent layout shift during countdown -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Soft background organic aura blobs for calming gradient depth -->
   <div class="blob blob-1" aria-hidden="true"></div>
@@ -19,21 +23,25 @@
     <!-- Header with application controls -->
     <header class="app-header">
       <div class="logo">
-        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        <span class="logo-text">FocusFlow</span>
+        <span class="logo-text">Focus</span>
       </div>
-      
+
       <div class="controls-group">
         <!-- Audio Chime Toggle Button -->
-        <button id="sound-toggle-btn" class="icon-btn" title="Toggle Sound Notification" aria-label="Toggle Sound Notification">
-          <svg id="sound-on-icon" class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button id="sound-toggle-btn" class="icon-btn" title="Toggle Sound Notification"
+          aria-label="Toggle Sound Notification">
+          <svg id="sound-on-icon" class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
             <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
           </svg>
-          <svg id="sound-off-icon" class="btn-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg id="sound-off-icon" class="btn-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
             <line x1="23" y1="9" x2="17" y2="15"></line>
             <line x1="17" y1="9" x2="23" y2="15"></line>
@@ -41,8 +49,10 @@
         </button>
 
         <!-- Dark/Light Theme Toggle Button -->
-        <button id="theme-toggle-btn" class="icon-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Light/Dark Theme">
-          <svg id="sun-icon" class="btn-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button id="theme-toggle-btn" class="icon-btn" title="Toggle Light/Dark Theme"
+          aria-label="Toggle Light/Dark Theme">
+          <svg id="sun-icon" class="btn-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -53,7 +63,8 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg id="moon-icon" class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg id="moon-icon" class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
@@ -62,7 +73,7 @@
 
     <!-- Main Glassmorphic Pomodoro Card -->
     <main class="timer-card">
-      
+
       <!-- Mode Indicator Label -->
       <div class="mode-container">
         <span class="pulse-indicator" id="mode-status-pulse"></span>
@@ -77,7 +88,7 @@
           <!-- Active colored progress ring -->
           <circle id="progress-bar" class="progress-ring-bar" cx="110" cy="110" r="100"></circle>
         </svg>
-        
+
         <!-- Large Centered Time Display -->
         <div class="timer-text-container">
           <span id="timer-digits" class="timer-digits">25:00</span>
@@ -91,7 +102,8 @@
         <button class="preset-btn" data-minutes="15" title="Set to 15 minutes">15m</button>
         <button class="preset-btn" data-minutes="45" title="Set to 45 minutes">45m</button>
         <div class="custom-input-wrapper">
-          <input type="number" id="custom-minutes" min="1" max="180" placeholder="Custom" aria-label="Custom duration in minutes" title="Enter custom minutes">
+          <input type="number" id="custom-minutes" min="1" max="180" placeholder="Custom"
+            aria-label="Custom duration in minutes" title="Enter custom minutes">
           <span class="input-suffix">m</span>
         </div>
       </div>
@@ -100,7 +112,8 @@
       <div class="button-group">
         <!-- Start Button -->
         <button id="start-btn" class="control-btn primary" title="Start Timer" aria-label="Start Timer">
-          <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
           <span>Start</span>
@@ -108,7 +121,8 @@
 
         <!-- Pause Button (Disabled initially) -->
         <button id="pause-btn" class="control-btn secondary" disabled title="Pause Timer" aria-label="Pause Timer">
-          <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="6" y="4" width="4" height="16"></rect>
             <rect x="14" y="4" width="4" height="16"></rect>
           </svg>
@@ -117,7 +131,8 @@
 
         <!-- Reset Button -->
         <button id="reset-btn" class="control-btn neutral" title="Reset Timer" aria-label="Reset Timer">
-          <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M23 4v6h-6"></path>
             <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
           </svg>
@@ -128,7 +143,8 @@
       <!-- Footer/Statistics section -->
       <footer class="timer-footer">
         <div class="stat-badge">
-          <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
             <polyline points="22 4 12 14.01 9 11.01"></polyline>
           </svg>
@@ -151,4 +167,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
